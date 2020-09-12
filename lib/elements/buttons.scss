@@ -1,0 +1,53 @@
+@import "../utility/colors.scss";
+@import "../utility/functions.scss";
+@import "../utility/mixins.scss";
+
+.button {
+  background-color: $lightest;
+  border-color: $darker;
+  border-style: solid;
+  border-width: 1px;
+  color: $darker;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 10px 15px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: getDarkerColor($lightest, 20%);
+    border-color: getDarkerColor($darker, 20%);
+    color: getDarkerColor($darker, 20%);
+  }
+
+  &.is-rounded {
+    border-radius: 2rem;
+  }
+
+  &.is-small {
+    font-size: 0.9rem;
+  }
+
+  &.is-smaller {
+    font-size: 0.75rem;
+  }
+
+  &.is-smallest {
+    font-size: 0.5rem;
+  }
+
+  &.is-large {
+    font-size: 1.25rem;
+  }
+
+  &.is-larger {
+    font-size: 1.5rem;
+  }
+
+  &.is-largest {
+    font-size: 2rem;
+  }
+
+  @include colors(1);
+  @include link();
+}

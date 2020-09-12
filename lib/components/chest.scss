@@ -1,0 +1,23 @@
+@import "../utility/colors.scss";
+@import "../utility/functions.scss";
+@import "../utility/mixins.scss";
+
+.chest {
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: auto;
+
+  @include colors();
+
+  > .drawer {
+    border: inherit;
+    margin: 10px;
+    padding: 10px;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

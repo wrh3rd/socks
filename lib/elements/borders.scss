@@ -1,0 +1,23 @@
+@import "../utility/colors.scss";
+
+.has-border {
+  
+
+  @each $color-name, $color-value in $colors {
+    .has-#{$color-name}-border {
+      background-color: $color-value !important;
+    }
+
+    .has-#{$color-name}-border-darken {
+      background-color: darken($color-value, 20%) !important;
+    }
+
+    .has-#{$color-name}-border-inverted {
+      background-color: invert($color-value, $weight: 100%) !important;
+    }
+
+    .has-#{$color-name}-border-lighten {
+      border: lighten($color-value, 20%) !important;
+    }
+  }
+}

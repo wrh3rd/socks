@@ -1,0 +1,33 @@
+@import "../utility/colors.scss";
+@import "../utility/functions.scss";
+@import "../utility/mixins.scss";
+
+.section {
+  display: block;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  padding: 25px;
+  width: 100%;
+
+  @media screen and (min-width: 800px) {
+    padding: 5rem 2rem;
+
+    &.is-small {
+      padding: 4rem 2rem;
+    }
+  
+    &.is-smaller {
+      padding: 3rem 2rem;
+    }
+  
+    &.is-large {
+      padding: 7.5rem 2rem;
+    }
+  
+    &.is-larger {
+      padding: 10rem 2rem;
+    }
+  }
+
+  @include colors();
+}

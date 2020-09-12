@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards</title>
+  <link rel="stylesheet" href="socks.css">
+</head>
+<body>
+  <section class="section">
+    <div class="content">
+      <div class="card is-normal">
+        <div class="card-header">
+          The Header
+        </div>
+
+        <div class="card-content">
+          The Content
+        </div>
+      </div>
+
+      <div class="card is-normal is-rounded">
+        <div class="card-header">
+          The Header
+        </div>
+
+        <div class="card-content">
+          The Content
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let colors = ['is-normal', 'is-primary', 'is-info', 'is-success', 'is-danger', 'is-warning', 'is-light', 'is-dark'];
+    let current = 0;
+
+    setInterval(() => {
+      let cards = document.querySelectorAll('.card.' + colors[current]);
+      
+      cards.forEach(card => {
+        card.classList.remove(colors[current]);
+      });
+      
+      current += 1;
+      if (current >= colors.length) {
+        current = 0;
+      }
+
+      cards.forEach(card => {
+        card.classList.add(colors[current]);
+      });
+    }, 1000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+@import "../utility/base.scss";
+@import "../utility/colors.scss";
+@import "../utility/functions.scss";
+
+.card {
+  border-style: solid;
+  border-color: $darker;
+  border-width: 1px;
+  color: $darker;
+  margin: 0;
+
+  &.is-rounded {
+    border-radius: 10px;
+
+    > .card-header {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
+
+  > .card-header {
+    background-color: $darker;
+    color: $lightest;
+    padding: 15px 10px;
+  }
+
+  > .card-content {
+    padding: 15px 10px;
+  }
+
+  @each $color-name, $color-value in $colors {
+    $color-value-lighter: getLighterColor($color-value, 40%, 1);
+
+    $color-value-text: getTextColor($color-value);
+    $color-value-lighter-text: getTextColor($color-value-lighter);
+
+    &.is-#{$color-name} {
+      background-color: $color-value-lighter;
+      border-color: $color-value;
+      color: $color-value-lighter-text;
+
+      > .card-header {
+        background-color: $color-value;
+        color: $color-value-text;
+      }
+    }  
+  }
+}

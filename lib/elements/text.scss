@@ -1,0 +1,50 @@
+@import "../utility/base.scss";
+@import "../utility/colors.scss";
+
+@each $color-name, $color-value in $colors {
+  .has-#{$color-name}-text {
+    color: $color-value;
+  }
+
+  .has-#{$color-name}-text-darken {
+    color: darken($color-value, 20%);
+  }
+
+  .has-#{$color-name}-text-inverted {
+    color: invert($color-value, $weight: 100%);
+  }
+
+  .has-#{$color-name}-text-lighten {
+    color: lighten($color-value, 20%);
+  }
+}
+
+@each $font-size-name, $font-size-value in $font-sizes {
+  .is-size-#{$font-size-name} {
+    font-size: $font-size-value;
+  }
+}
+
+.has-text-centered {
+  text-align: center;
+}
+
+.has-text-left {
+  text-align: left;
+}
+
+.has-text-right {
+  text-align: right;
+}
+
+.title {
+  display: block;
+  font-size: $font-size-8;
+  font-weight: $font-weight-bold;
+}
+
+.subtitle {
+  display: block;
+  font-size: $font-size-6;
+  font-weight: $font-weight-bold;
+}

@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialogs</title>
+  <link rel="stylesheet" href="socks.css">
+</head>
+<body id="app">
+  <section class="section">
+    <div class="content">
+      <button class="button is-outlined" onclick="document.getElementById('dialog-message').classList.add('is-open')">Open Message</button>
+      <button class="button is-outlined" onclick="document.getElementById('dialog-card').classList.add('is-open')">Open Card</button>
+    </div>
+  </section>
+
+  <div id="dialog-message" class="dialog">
+    <div class="dialog-backdrop"></div>
+    <div class="dialog-message">
+      Hello Message
+    </div>
+    <button class="dialog-close icon is-close" onclick="document.getElementById('dialog-message').classList.remove('is-open')"></a>
+  </div>
+
+  <div id="dialog-card" class="dialog">
+    <div class="dialog-backdrop"></div>
+    <div class="dialog-content">
+      <div class="card is-rounded">
+        <div class="card-header">
+          The Header
+        </div>
+
+        <div class="card-content">
+          The Content
+        </div>
+      </div>
+    </div>
+    <button class="dialog-close icon is-close" onclick="document.getElementById('dialog-message').classList.remove('is-open')"></a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+@import "../utility/colors.scss";
+@import "../utility/functions.scss";
+
+$split-sizes: (
+  '1-1': (30, 30),
+  '1-2': (20, 40),
+  '1-3': (15, 45),
+  '1-4': (12, 48),
+  '1-5': (10, 50),
+  '1-9': (6, 54),
+  '2-1': (40, 20),
+  '3-1': (45, 15),
+  '4-1': (48, 12),
+  '5-1': (50, 10),
+  '9-1': (54, 6),
+);
+
+.panel {
+  height: 100%;
+  display: block;
+  width: 100%;
+
+  > .panel-content {
+    height: 100%;
+    display: block;
+    width: 100%;
+  }
+
+  &.is-split-horizontal {
+    border-left-color: inherit;
+    display: flex;
+
+    > .panel-content {
+      display: none;
+    }
+
+    @each $split-size-name, $split-size-pair in $split-sizes {
+      $split-size-left: nth($split-size-pair, 1);
+      $split-size-right: nth($split-size-pair, 2);
+
+      &.is-split-#{$split-size-name} {
+        > .panel-left-content {
+          flex-grow: $split-size-left;
+        }
+
+        > .panel-right-content {
+          flex-grow: $split-size-right;
+        }
+      }
+    }
+  }
+
+  &.is-split-vertical {
+    border-left-color: inherit;
+    > .panel-content {
+      display: none;
+    }
+
+    @each $split-size-name, $split-size-pair in $split-sizes {
+      $split-size-top: nth($split-size-pair, 1);
+      $split-size-bottom: nth($split-size-pair, 2);
+
+      &.is-split-#{$split-size-name} {
+        > .panel-top-content {
+          flex-grow: $split-size-top;
+        }
+
+        > .panel-bottom-content {
+          flex-grow: $split-size-bottom;
+        }
+      }
+    }
+  }
+}

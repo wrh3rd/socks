@@ -1,0 +1,8 @@
+@import "../utility/colors.scss";
+@import "../utility/mixins.scss";
+
+.highlight {
+  background-color: $lighter;
+
+  @include colors();
+}

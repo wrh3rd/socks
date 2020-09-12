@@ -1,0 +1,175 @@
+@import "base.scss";
+@import "colors.scss";
+@import "functions.scss";
+
+@mixin colors($use-hover: 0) {
+  @each $color-name, $color-value in $colors {
+    $color-value-hover: getHoverColor($color-value);
+    $color-value-text: getTextColor($color-value);
+
+    $color-value-darker: getDarkerColor($color-value, $darker-value);
+    $color-value-darker-hover: getHoverColor($color-value-darker);
+    $color-value-darker-text: getTextColor($color-value-darker);
+
+    $color-value-lighter: getLighterColor($color-value, $lighter-value);
+    $color-value-lighter-hover: getHoverColor($color-value-lighter);
+    $color-value-lighter-text: getTextColor($color-value-lighter);
+
+    &.is-#{$color-name} {
+      background-color: $color-value;
+      border-color: transparent;
+      color: $color-value-text;
+
+      @if ($use-hover != 0) {
+        &:hover {
+          background-color: $color-value-hover;
+          color: $color-value-text;
+        }
+      }
+
+      &.is-darker {
+        background-color: $color-value-darker;
+        border-color: transparent;
+        color: $color-value-darker-text;
+
+        @if ($use-hover != 0) {
+          &:hover {
+            background-color: $color-value-darker-hover;
+            color: $color-value-darker-text;
+          }
+        }
+      }
+
+      &.is-lighter {
+        background-color: $color-value-lighter;
+        border-color: transparent;
+        color: $color-value-lighter-text;
+
+        @if ($use-hover != 0) {
+          &:hover {
+            background-color: $color-value-lighter-hover;
+            color: $color-value-lighter-text;
+          }
+        }
+      }
+
+      &.is-outlined {
+        background-color: transparent;
+        border-color: $color-value;
+        color: $color-value;
+
+        @if ($use-hover != 0) {
+          &:hover {
+            background-color: transparent;
+            border-color: $color-value-hover;
+            color: $color-value-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin base-component-colors() {
+  @each $color-name, $color-value in $colors {
+    &.is-#{$color-name} {
+      background-color: $color-value;
+      border-color: getDarkerColor($color-value, 40%);
+      color: getTextColor($color-value);
+
+      &.is-outlined {
+        background-color: transparent;
+        border-color: $color-value;
+        color: $color-value;
+      }
+    }  
+  }
+}
+
+@mixin table-component-colors() {
+  @each $color-name, $color-value in $colors {
+    &.is-#{$color-name} {
+      background-color: $color-value;
+      border-color: $lighter;
+      color: getTextColor($color-value);
+
+      tbody {
+        tr {
+          border-bottom-color: $lighter;
+        }
+      }
+    
+      thead {
+        tr {
+          border-bottom-color: $lighter;
+          border-bottom-width: 2px;
+        }
+      }
+
+      &.is-outlined {
+        background-color: transparent;
+        border-color: $color-value;
+        color: $color-value;
+
+        tbody {
+          tr {
+            border-bottom-color: $color-value;
+          }
+        }
+      
+        thead {
+          tr {
+            border-bottom-color: $color-value;
+            border-bottom-width: 2px;
+          }
+        }
+      }
+    }  
+  }
+}
+
+@mixin link() {
+  $color-value-text: $link;
+  $color-value-hover: getHoverColor($color-value-text);
+
+  $color-value-darker-text: getDarkerColor($color-value-text, $darker-value);
+  $color-value-darker-hover: getHoverColor($color-value-darker-text);
+
+  $color-value-lighter-text: getLighterColor($color-value-text, $lighter-value);
+  $color-value-lighter-hover: getHoverColor($color-value-lighter-text);
+
+  &.is-link {
+    background-color: transparent;
+    border-color: transparent;
+    color: $color-value-text;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-value-hover;
+    }
+
+    &.is-darker {
+      color: $color-value-darker-text;
+
+      &:hover {
+        color: $color-value-darker-hover;
+      }
+    }
+
+    &.is-lighter {
+      color: $color-value-lighter-text;
+
+      &:hover {
+        color: $color-value-lighter-hover;
+      }
+    }
+
+    &.is-outlined {
+      border-color: $color-value-text;
+
+      &:hover {
+        border-color: $color-value-hover;
+      }
+    }
+  }
+}

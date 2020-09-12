@@ -1,0 +1,10 @@
+@import "../utility/colors.scss";
+
+.link {
+  color: $link;
+  display: block;
+
+  &.no-underline {
+    text-decoration: none;
+  }
+}

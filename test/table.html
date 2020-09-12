@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tables</title>
+  <link rel="stylesheet" href="socks.css">
+</head>
+<body>
+  <section class="section">
+    <div class="content">
+      <table class="table is-primary">
+        <thead>
+          <tr>
+            <th>This</th>
+            <th>is</th>
+            <th>the</th>
+            <th>header.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>This</td>
+            <td>is</td>
+            <td>the</td>
+            <td>body.</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>This</td>
+            <td>is</td>
+            <td>the</td>
+            <td>footer.</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <table class="table is-primary is-outlined">
+        <thead>
+          <tr>
+            <th>This</th>
+            <th>is</th>
+            <th>the</th>
+            <th>header.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>This</td>
+            <td>is</td>
+            <td>the</td>
+            <td>body.</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>This</td>
+            <td>is</td>
+            <td>the</td>
+            <td>footer.</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    let colors = ['is-normal', 'is-primary', 'is-info', 'is-success', 'is-danger', 'is-warning', 'is-light', 'is-dark'];
+    let current = 0;
+
+    setInterval(() => {
+      let tables = document.querySelectorAll('.table.' + colors[current]);
+      
+      tables.forEach(table => {
+        table.classList.remove(colors[current]);
+      });
+      
+      current += 1;
+      if (current >= colors.length) {
+        current = 0;
+      }
+
+      tables.forEach(table => {
+        table.classList.add(colors[current]);
+      });
+    }, 1000);
+  </script>
+</body>
+</html>

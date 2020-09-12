@@ -1,0 +1,35 @@
+@import "base.scss";
+@import "colors.scss";
+
+@function getDarkerColor($color, $value, $allow-black: 0) {
+  $result: darken($color, $value);
+  @if ($allow-black == 0 and lightness($result) < $lightness-min) {
+    $result: darken($color, lightness($result) + $lightness-min);
+  }
+
+  @return $result;
+}
+
+@function getHoverColor($background-color) {
+  @if (lightness($background-color) - $darker-value < 0) {
+    @return getLighterColor($background-color, $darker-value);
+  }
+  @return getDarkerColor($background-color, $darker-value);
+}
+
+@function getLighterColor($color, $value, $allow-white: 0) {
+  $result: lighten($color, $value);
+  @if ($allow-white == 0 and lightness($result) > $lightness-max) {
+    $result: lighten($color, lightness($result) - $lightness-max);
+  }
+
+  @return $result;
+}
+
+@function getTextColor($background-color) {
+  $result: $textdark;
+  @if (lightness($background-color) <= 60) {
+    $result: $textlight;
+  } 
+  @return $result;
+}

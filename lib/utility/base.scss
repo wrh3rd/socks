@@ -1,0 +1,73 @@
+// Font-Size
+$font-size-1: 0.5rem !default;
+$font-size-2: 0.75rem !default;
+$font-size-3: 1rem !default;
+$font-size-4: 1.25rem !default;
+$font-size-5: 1.5rem !default;
+$font-size-6: 1.75rem !default;
+$font-size-7: 2rem !default;
+$font-size-8: 2.5rem !default;
+$font-size-9: 3rem !default;
+
+$font-size-smaller: 0.5rem !default;
+$font-size-small: 0.75rem !default;
+$font-size-normal: 1rem !default;
+$font-size-medium: 1.25rem !default;
+$font-size-large: 1.5rem !default;
+$font-size-larger: 1.75rem !default;
+$font-size-huge: 2rem !default;
+$font-size-extrahuge: 2.5rem !default;
+$font-size-ultrahuge: 3rem !default;
+
+$font-sizes: (
+  1: 0.5rem,
+  2: 0.75rem,
+  3: 1rem,
+  4: 1.25rem,
+  5: 1.5rem,
+  6: 1.75rem,
+  7: 2rem,
+  8: 2.5rem,
+  9: 3rem,
+
+  smaller: 0.5rem,
+  small: 0.75rem,
+  normal: 1rem,
+  medium: 1.25rem,
+  large: 1.5rem,
+  larger: 1.75rem,
+  huge: 2rem,
+  extrahuge: 2.5rem,
+  ultrahuge: 3rem
+) !default;
+
+// Font-weight
+$font-weight-1: 100 !default;
+$font-weight-2: 200 !default;
+$font-weight-3: 300 !default;
+$font-weight-4: 400 !default;
+$font-weight-5: 500 !default;
+$font-weight-6: 600 !default;
+$font-weight-7: 700 !default;
+$font-weight-8: 800 !default;
+$font-weight-9: 900 !default;
+
+$font-weight-thin: 100 !default;
+$font-weight-extralight: 200 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extrabold: 800 !default;
+$font-weight-ultrabold: 900 !default;
+
+// Helpers
+$darker-value: 10% !default;
+$lighter-value: 10% !default;
+$lightness-value-max: 10% !default;
+$lightness-max: 90% !default;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}

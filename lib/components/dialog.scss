@@ -1,0 +1,46 @@
+@import "../utility/colors.scss";
+
+.dialog {
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  &.is-open {
+    display: inline;
+  }
+
+  > .dialog-backdrop {
+    background-color: $darker;
+    height: 100%;
+    opacity: 0.75;
+    position: absolute;
+    width: 100%;
+  }
+
+  > .dialog-close {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+
+  > .dialog-content {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  > .dialog-message {
+    background: $lightest;
+    border-radius: 8px;
+    color: $darkest;
+    left: 50%;
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

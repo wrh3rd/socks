@@ -1,0 +1,169 @@
+@import "../utility/colors.scss";
+@import "../utility/mixins.scss";
+
+.dropdown {
+  background-color: $lightest;
+  border-color: $darker;
+  color: $darker;
+  display: inline-block;
+  position: relative;
+
+  &.is-rounded {
+    > .dropdown-selected {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    > .dropdown-list {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    &:not(.is-open) {
+      > .dropdown-selected {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+
+  &.is-smaller {
+    > .dropdown-selected {
+      padding-bottom: 2px;
+      padding-top: 2px;
+    }
+
+    > .dropdown-list {
+      > .dropdown-item { 
+        padding-bottom: 2px;
+        padding-top: 2px;
+      }
+    }
+  }
+
+  &.is-small {
+    > .dropdown-selected {
+      padding-bottom: 5px;
+      padding-top: 5px;
+    }
+
+    > .dropdown-list {
+      > .dropdown-item { 
+        padding-bottom: 5px;
+        padding-top: 5px;
+      }
+    }
+  }
+
+  &.is-large {
+    > .dropdown-selected {
+      padding-bottom: 15px;
+      padding-top: 15px;
+    }
+
+    > .dropdown-list {
+      > .dropdown-item { 
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
+    }
+  }
+
+  &.is-larger {
+    > .dropdown-selected {
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+
+    > .dropdown-list {
+      > .dropdown-item { 
+        padding-bottom: 20px;
+        padding-top: 20px;
+      }
+    }
+  }
+
+  > .dropdown-caret {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - (1em / 3));
+  }
+
+  > .dropdown-selected {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 2px;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    padding-right: 25px;
+  }
+
+  > .dropdown-list {
+    background-color: inherit;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 2px;
+    color: inherit;
+    display: none;
+    left: 0;
+    list-style: none;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 9999;
+
+    > .dropdown-item {
+      color: inherit;
+      display: block;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+
+      @include colors(1);
+
+      &:not(:last-child) {
+        border-bottom-color: inherit;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+      }
+    }
+  }
+
+  &.is-open {
+    > .dropdown-list {
+      display: block;
+    }
+  }
+
+  @each $color-name, $color-value in $colors {
+    &.is-#{$color-name} {
+      border-color: getDarkerColor($color-value, 40%);
+
+      &.is-outlined {
+        background-color: transparent;
+        border-color: $color-value;
+        color: $color-value;
+
+        > .dropdown-list {
+          background-color: $lightest;
+          border-color: $color-value;
+          color: $color-value;
+        }
+
+        > .dropdown-selected {
+          background-color: transparent;
+          border-color: $color-value;
+          color: $color-value;
+        }
+      }
+
+      > .dropdonw-list, > .dropdown-selected {
+        background-color: $color-value;
+        color: getTextColor($color-value);
+      }
+    }  
+  }
+}

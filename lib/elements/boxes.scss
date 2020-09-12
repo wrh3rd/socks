@@ -1,0 +1,46 @@
+@import "../utility/colors.scss";
+@import "../utility/functions.scss";
+@import "../utility/mixins.scss";
+
+.box {
+  border: 1px solid $lighter;
+  padding: 24px 24px 24px 24px;
+
+  @include colors();
+
+  &.has-shadow {
+    box-shadow: 2px 4px 10px;
+
+    @each $color-name, $color-value in $colors {
+      $color-value-darker: getDarkerColor($color-value, 40%);
+
+      &.is-#{$color-name} {
+        box-shadow: 2px 4px 10px $color-value-darker;
+      }
+    }
+
+    &.extra-shadow {
+      box-shadow: 2px 4px 10px 3px;
+
+      @each $color-name, $color-value in $colors {
+        $color-value-darker: getDarkerColor($color-value, 40%);
+  
+        &.is-#{$color-name} {
+          box-shadow: 2px 4px 10px 3px $color-value-darker;
+        }
+      }
+    }
+
+    &.ultra-shadow {
+      box-shadow: 2px 4px 10px 6px;
+
+      @each $color-name, $color-value in $colors {
+        $color-value-darker: getDarkerColor($color-value, 40%);
+  
+        &.is-#{$color-name} {
+          box-shadow: 2px 4px 10px 6px $color-value-darker;
+        }
+      }
+    }
+  }
+}

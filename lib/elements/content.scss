@@ -1,0 +1,18 @@
+@import "../utility/colors.scss";
+
+.content {
+  color: $darker;
+  display: block;
+  margin: auto;
+  width: 100%;
+
+  > div, h1, h2, h3, h4, h5, h6, p, > table {
+    margin-bottom: 0.8rem;
+  }
+
+  @media screen and (min-width: 1080px) {
+    &.is-contained {
+      max-width: 1080px;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+$primary: hsl(240, 100%, 50%) !default;
+$info: hsl(180, 75%, 60%) !default;
+$link: hsl(210, 100%, 50%) !default;
+$success: hsl(120, 50%, 50%) !default;
+$danger: hsl(0, 75%, 50%) !default;
+$warning: hsl(60, 100%, 75%) !default;
+$mid: hsl(0, 0%, 50%) !default;
+$light: hsl(0, 0%, 70%) !default;
+$lighter: hsl(0, 0%, 85%) !default;
+$lightest: hsl(0, 0%, 100%) !default;
+$dark: hsl(0, 0%, 30%) !default;
+$darker: hsl(0, 0%, 15%) !default;
+$darkest: hsl(0, 0%, 0%) !default;
+$textlight: hsl(0, 0%, 100%) !default;
+$textdark: hsl(0, 0%, 0%) !default;
+
+$colors: (
+  "primary": $primary,
+  "info": $info,
+  "success": $success,
+  "danger": $danger,
+  "warning": $warning,
+  "mid": $mid,
+  "light": $light,
+  "lighter": $lighter,
+  "lightest": $lightest,
+  "dark": $dark,
+  "darker": $darker,
+  "darkest": $darkest,
+  "textlight": $textlight,
+  "textdark": $textdark
+) !default;

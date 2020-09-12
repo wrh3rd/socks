@@ -1,0 +1,30 @@
+@import "../utility/colors.scss";
+
+$list-style-types: (
+  circle,
+  decimal,
+  disc,
+  square
+);
+
+.list {
+  list-style-type: none;
+  padding: 0;
+
+  @each $list-style-type in $list-style-types {
+    &.is-type-#{$list-style-type} {
+      list-style-type: $list-style-type;
+    }
+  }
+
+  > li:not(:last-child) {
+    padding-bottom: 10px;
+
+    &.is-separator {
+      border-bottom: 1px solid $mid;
+      padding-bottom: 0;
+      margin-bottom: 15px;
+      margin-top: 5px;
+    }
+  }
+}

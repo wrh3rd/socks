@@ -1,0 +1,19 @@
+@import "../utility/colors.scss";
+
+@each $color-name, $color-value in $colors {
+  .has-#{$color-name}-background {
+    background-color: $color-value !important;
+  }
+
+  .has-#{$color-name}-background-darken {
+    background-color: darken($color-value, 20%) !important;
+  }
+
+  .has-#{$color-name}-background-inverted {
+    background-color: invert($color-value, $weight: 100%) !important;
+  }
+
+  .has-#{$color-name}-background-lighten {
+    background-color: lighten($color-value, 20%) !important;
+  }
+}

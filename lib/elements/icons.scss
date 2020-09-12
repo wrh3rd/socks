@@ -1,0 +1,122 @@
+@import "../utility/colors.scss";
+
+.icon {
+  background-color: transparent;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  display: block;
+  height: 33px;
+  position: relative;
+  width: 33px;
+
+  &::after, &::before {
+    border: none;
+    content: " ";
+    display: table;
+    position: absolute;
+  }
+
+  @each $color-name, $color-value in $colors {
+    $color-value-hover: getHoverColor($color-value);
+    $color-value-text: getTextColor($color-value);
+
+    &.is-#{$color-name} {
+      background-color: $color-value;
+
+      &:hover {
+        background-color: $color-value-hover;
+      }
+    }
+
+    &.is-#{$color-name}::after, &.is-#{$color-name}::before {
+      background-color: $color-value-text;
+      border-color: $color-value-text;
+    }
+  }
+
+  // built in icons
+  &.is-cancel {
+    &::after {
+      border: 3px solid $lightest;
+      border-radius: 32px;
+      height: 60%;
+      left: calc(50% - 1px);
+      transform: translate(-50%, -50%);
+      top: calc(50% - 1px);
+      width: 60%;
+    }
+
+    &::before {
+      background-color: $lightest;
+      height: 60%;
+      left: calc(50% - 1px);
+      transform: translate(-50%, -50%) rotate(45deg);
+      top: calc(50% - 1px);
+      width: 3px;
+    }
+  }
+
+  &.is-check {
+    &::after {
+      background-color: transparent !important;
+      border-right: 4px solid $lightest;
+      border-bottom: 4px solid $lightest;
+      height: 60%;
+      left: calc(50% - 1px);
+      transform: translate(-50%, -50%) rotate(45deg);
+      top: calc(50% - 1px);
+      width: 30%;
+    }
+  }
+
+  &.is-close {
+    &::after {
+      background-color: $lightest;
+      border-radius: 32px;
+      height: 3px;
+      left: calc(50% - 1px);
+      transform: translate(-50%, -50%) rotate(45deg);
+      top: calc(50% - 1px);
+      width: 60%;
+    }
+  
+    &::before {
+      background-color: $lightest;
+      border-radius: 32px;
+      height: 60%;
+      left: calc(50% - 1px);
+      transform: translate(-50%, -50%) rotate(45deg);
+      top: calc(50% - 1px);
+      width: 3px;
+    }
+  }
+
+  &.is-loading {
+    &::after {
+      animation: spin 0.5s infinite linear;
+      background-color: transparent !important;
+      border-left: 2px solid $lightest; 
+      border-top: 2px solid $lightest;
+      border-radius: 32px;
+      height: 40%;
+      left: calc(50% - 1px);
+      transform: translate(-50%, -50%);
+      top: calc(50% - 1px);
+      width: 40%;
+    }
+  }
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: translate(calc(50% - (1em / 2)), calc(50% - (1em / 2))) rotate(0deg); }
+  to { -moz-transform: translate(calc(50% - (1em / 2)), calc(50% - (1em / 2))) rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: translate(calc(50% - (1em / 2)), calc(50% - (1em / 2))) rotate(0deg); }
+  to { -webkit-transform: translate(calc(50% - (1em / 2)), calc(50% - (1em / 2))) rotate(360deg); }
+}
+@keyframes spin {
+  from {transform: translate(calc(50% - (1em / 2)), calc(50% - (1em / 2))) rotate(0deg);}
+  to {transform: translate(calc(50% - (1em / 2)), calc(50% - (1em / 2))) rotate(360deg);}
+}

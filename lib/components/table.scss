@@ -1,0 +1,42 @@
+@import "../utility/colors.scss";
+@import "../utility/mixins.scss";
+
+table.table {
+  border-collapse: collapse;
+  color: $darker;
+  font-size: 1.5rem;
+  width: 100%;
+
+  tbody {
+    tr {
+      border-bottom-color: $lighter;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+    }
+  }
+
+  thead {
+    tr {
+      border-bottom-color: $darker;
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+    }
+  }
+
+  th {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  td, th {
+    padding: 10px;
+  }
+
+  &.has-border {
+    border-color: $darker;
+    border-style: solid;
+    border-width: 2px;
+  }
+
+  @include table-component-colors();
+}
