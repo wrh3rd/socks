@@ -6,8 +6,8 @@
   "author": "William R. Hansen <wrh3rd@posteo.net>",
   "license": "MIT",
   "scripts": {
-    "build": "node-sass lib/main.scss dist/socks.css --output-style compressed",
-    "test": "node-sass lib/main.scss test/socks.css -w"
+    "build": "node-sass socks.scss dist/socks.css --output-style compressed",
+    "test": "node-sass socks.scss test/socks.css -w"
   },
   "devDependencies": {
     "node-sass": "^4.14.1"
