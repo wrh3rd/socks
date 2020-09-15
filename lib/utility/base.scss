@@ -65,7 +65,7 @@ $font-weight-ultrabold: 900 !default;
 // Helpers
 $darker-value: 10% !default;
 $lighter-value: 10% !default;
-$lightness-value-max: 10% !default;
+$lightness-min: 10% !default;
 $lightness-max: 90% !default;
 
 html {
